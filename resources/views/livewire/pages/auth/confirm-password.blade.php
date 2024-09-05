@@ -41,9 +41,9 @@ new #[Layout('layouts.guest')] class extends Component
     <form wire:submit="confirmPassword">
         <!-- Password -->
         <div>
-            <x-input-label for="password" :value="__('Password')" />
+            <x-breeze.input-label for="password" :value="__('Password')" />
 
-            <x-text-input wire:model="password"
+            <x-breeze.text-input wire:model="password"
                           id="password"
                           class="block mt-1 w-full"
                           type="password"

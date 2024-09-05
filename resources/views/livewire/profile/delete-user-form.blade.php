@@ -51,9 +51,9 @@ new class extends Component
             </p>
 
             <div class="mt-6">
-                <x-input-label for="password" value="{{ __('Password') }}" class="sr-only" />
+                <x-breeze.input-label for="password" value="{{ __('Password') }}" class="sr-only" />
 
-                <x-text-input
+                <x-breeze.text-input
                     wire:model="password"
                     id="password"
                     name="password"
