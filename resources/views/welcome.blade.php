@@ -18,9 +18,9 @@
 
 <body class="bg-zinc-200 dark:bg-zinc-900 h-screen">
   {{-- Navbar --}}
-  <section class="w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+  <section class="w-full z-20 top-0 start-0 border-b border-zinc-200 dark:border-zinc-600">
     <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-      <a href="#" class="flex items-center space-x-3">
+      <a href="{{ route('home') }}" class="flex items-center space-x-3">
         <img src="https://cdn.icon-icons.com/icons2/4085/PNG/512/meta_logo_icon_259375.png" class="h-10"
           alt="Empresa Logo">
       </a>
@@ -68,12 +68,12 @@
   <footer>
     <div class="max-w-screen-xl mx-auto px-4 py-10 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center">
-        <div class="text-sm text-gray-500 dark:text-gray-400">
+        <div class="text-sm text-zinc-500 dark:text-zinc-400">
           © 2024 Centro Odontologico.
         </div>
         <div class="flex space-x-4">
-          <a href="#" class="text-sm text-gray-500 dark:text-gray-400">Política de privacidad</a>
-          <a href="#" class="text-sm text-gray-500 dark:text-gray-400">Términos y condiciones</a>
+          <a href="#" class="text-sm text-zinc-500 dark:text-zinc-400">Política de privacidad</a>
+          <a href="#" class="text-sm text-zinc-500 dark:text-zinc-400">Términos y condiciones</a>
         </div>
       </div>
     </div>
