@@ -18,7 +18,7 @@
 		@endif
 
 		@if ($form_quotes)
-			<x-modals.createOrUpdate />
+			<x-modals.createOrUpdate :$quoteId :$reason :$date :$centralId />
 		@endif
 	</main>
 

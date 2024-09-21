@@ -45,7 +45,7 @@
             Edit
           </x-tables.tbl_button>
           <x-tables.tbl_button class="bg-pink-900 text-white dark:bg-pink-700">
-            Delete
+            Cancel
           </x-tables.tbl_button>
         </td>
       </tr>
