@@ -35,13 +35,13 @@
           {{ $quote->reason }}
         </td>
         <td class="whitespace-nowrap px-6 py-4">
-          {{ $quote->date_quote }}
+          {{ $quote->date_quote->format('d/m/Y') }}
         </td>
         <td class="whitespace-nowrap px-6 py-4">
           {{ $quote->central->name }}
         </td>
         <td class="flex flex-wrap justify-center gap-2 px-6 py-4">
-          <x-tables.tbl_button class="bg-sky-700 text-white dark:bg-sky-600">
+          <x-tables.tbl_button wire:click='updateQuote({{ $quote }})' class="bg-sky-700 text-white dark:bg-sky-600">
             Edit
           </x-tables.tbl_button>
           <x-tables.tbl_button class="bg-pink-900 text-white dark:bg-pink-700">

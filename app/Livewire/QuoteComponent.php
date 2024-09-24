@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Quote;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Attributes\Validate;
 use Livewire\Component;
@@ -35,13 +36,6 @@ class QuoteComponent extends Component
         $this->centralId = null;
 	}
 
-    public function render()
-    {
-        return view('livewire.quote-component', [
-            'quotes' => $this->quotes,
-        ]);
-    }
-
     public function toggleFormQuotes()
     {
         $this->form_quotes = !$this->form_quotes;
@@ -65,4 +59,21 @@ class QuoteComponent extends Component
 		$this->clearFields();
 		$this->form_quotes = false;
 	}
+
+    public function updateQuote(Quote $q)
+    {
+        $this->quoteId = $q->id;
+        $this->reason = $q->reason;
+        $this->date = $q->date_quote;
+        $this->centralId = $q->central_id;
+
+        $this->form_quotes = true;
+    }
+
+    public function render()
+    {
+        return view('livewire.quote-component', [
+            'quotes' => $this->quotes,
+        ]);
+    }
 }

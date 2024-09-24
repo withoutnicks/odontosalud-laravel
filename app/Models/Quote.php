@@ -19,6 +19,10 @@ class Quote extends Model
     'central_id',
   ];
 
+  protected $casts = [
+    'date_quote' => 'date',
+  ];
+
   /**
    * Get the central that owns the Quote
    *

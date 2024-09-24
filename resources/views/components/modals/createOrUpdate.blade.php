@@ -35,7 +35,7 @@
 							class="mb-2 block text-sm font-medium text-zinc-900 dark:text-white">
 							Date Quote
 							<input type="date" min="{{ date('Y-m-d') }}" wire:model='date'
-								class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 dark:border-zinc-500 dark:bg-zinc-600 dark:text-white dark:placeholder-zinc-400">
+								class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 dark:border-zinc-500 dark:bg-zinc-600 dark:text-white dark:placeholder-zinc-400 dark:[color-scheme:dark]">
 						</label>
 						<div>
 							@error('date') <span class="text-red-500">{{ $message }}</span> @enderror 
