@@ -1,4 +1,4 @@
-<section class="px-12">
+<section class="">
 	<form >
 		<label for="default-search" class="sr-only mb-2 text-sm font-medium text-zinc-900 dark:text-white">
 			Search
@@ -18,7 +18,7 @@
 				@foreach ($searches as $user)
 					<li wire:key="{{ $user->id }}"
 						class="cursor-pointer px-4 py-2 text-zinc-800 hover:bg-zinc-200 dark:text-zinc-300 hover:dark:bg-zinc-900"
-						wire:click="loadQuotes({{ $user->id }})">
+						wire:click="selectUser({{ $user->id }})">
 						{{ $user->name }} <br>
 						<small class="text-zinc-800 dark:text-zinc-400">{{ $user->email }}</small>
 					</li>
@@ -27,7 +27,7 @@
 		@endif
 	</article>
 
-	@if ($selectedUserId && count($quotes) > 0)
+	{{-- @if ($selectedUserId && count($quotes) > 0)
 		<div class="mt-4">
 			<x-tables.tbl_main :$quotes />
 		</div>
@@ -37,5 +37,5 @@
       role="alert">
       <span class="font-medium">Por favor seleccione un usuario para ver sus citas.</span>
     </div>
-  @endif
+  @endif --}}
 </section>
