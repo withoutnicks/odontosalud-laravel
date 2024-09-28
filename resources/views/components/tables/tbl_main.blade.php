@@ -44,8 +44,11 @@
           <x-tables.tbl_button wire:click='updateQuote({{ $quote }})' class="bg-sky-700 text-white dark:bg-sky-600">
             Edit
           </x-tables.tbl_button>
-          <x-tables.tbl_button class="bg-pink-900 text-white dark:bg-pink-700">
-            Cancel
+          <x-tables.tbl_button 
+            wire:click='deleteQuote({{ $quote }})' 
+            wire:confirm='Seguro que quieres cancelar esta cita?' 
+            class="bg-pink-900 text-white dark:bg-pink-700">
+            Delete
           </x-tables.tbl_button>
         </td>
       </tr>
