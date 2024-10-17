@@ -17,7 +17,7 @@
 			</div>
 			<!-- Modal body -->
 			<form class="p-4 md:p-5" wire:submit.prevent='saveQuote'>
-				<div class="mb-4 grid grid-cols-2 gap-4">
+				<div class="grid grid-cols-2 gap-4">
 					<div class="col-span-2">
 						<label for="description"
 							class="mb-2 block text-sm font-medium text-zinc-900 dark:text-white">Quote
@@ -27,18 +27,21 @@
 							 placeholder="Write your query here"></textarea>
 						</label>
 						<div>
-							@error('reason') <span class="text-red-500">{{ $message }}</span> @enderror 
+							@error('reason')
+								<span class="text-red-500">{{ $message }}</span>
+							@enderror
 						</div>
 					</div>
 					<div class="col-span-2 sm:col-span-1">
-						<label for="price"
-							class="mb-2 block text-sm font-medium text-zinc-900 dark:text-white">
+						<label for="price" class="mb-2 block text-sm font-medium text-zinc-900 dark:text-white">
 							Date Quote
 							<input type="date" min="{{ date('Y-m-d') }}" wire:model='date'
 								class="focus:ring-primary-600 focus:border-primary-600 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 dark:border-zinc-500 dark:bg-zinc-600 dark:text-white dark:placeholder-zinc-400 dark:[color-scheme:dark]">
 						</label>
 						<div>
-							@error('date') <span class="text-red-500">{{ $message }}</span> @enderror 
+							@error('date')
+								<span class="text-red-500">{{ $message }}</span>
+							@enderror
 						</div>
 					</div>
 					<div class="col-span-2 sm:col-span-1">
@@ -56,15 +59,30 @@
 							</select>
 						</label>
 						<div>
-							@error('centralId') <span class="text-red-500">{{ $message }}</span> @enderror 
+							@error('centralId')
+								<span class="text-red-500">{{ $message }}</span>
+							@enderror
 						</div>
 					</div>
 				</div>
 
-				<hr class="h-px my-4 bg-gray-200 border-0 dark:bg-gray-600">
+				@if (auth()->user()->permissions)
+					<label class="my-2 block text-sm font-medium text-zinc-900 dark:text-white">
+						Change Quote
+						<select
+							wire:model='status'
+							class="focus:ring-primary-500 focus:border-primary-500 dark:focus:ring-primary-500 dark:focus:border-primary-500 block w-full rounded-lg border border-zinc-300 bg-zinc-50 p-2.5 text-sm text-zinc-900 dark:border-zinc-500 dark:bg-zinc-600 dark:text-white dark:placeholder-zinc-400">
+							<option value="pending">🟡 Pendiente</option>
+							<option value="approved">🔵 Aprovada</option>
+							<option value="active">🟢 Activo</option>
+						</select>
+					</label>
+				@endif
+
+				<hr class="my-4 h-px border-0 bg-gray-200 dark:bg-gray-600">
 
 				<!-- Actions -->
-				<div class="flex gap-4 justify-end">
+				<div class="flex justify-end gap-4">
 					<x-alternative-button type="submit" class="w-1/2 bg-denim-300 dark:bg-denim-600">
 						{{ $quoteId ? 'Update' : 'Create' }} quote
 						<x-svg.arrow-right />

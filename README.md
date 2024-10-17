@@ -10,7 +10,7 @@
 (                                                                 )
  "+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+"+.+" 
 ```
-> Este es un proyecto que inicialmente buscaba poner en práctica lo aprendido a nivel de Java con Spring Boot. Finalmente decidi migrar la idea del proyecto a PHP con Laravel.
+> Este es un proyecto que inicialmente buscaba poner en práctica lo aprendido a nivel de Java con Spring Boot. Finalmente decidi migrar la idea del proyecto a PHP con Laravel y Livewire.
 
 ## About
 
@@ -18,7 +18,33 @@ Este proyecto busca simular un sistema de citas para un centro odontologico, don
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+>Pagina Inicial
+
+![App Index](./images/index.png)
+
+>Pagina de Login
+
+![App Login](./images/login.png)
+
+>Vista de un usuario
+
+![App View User](./images/view_user.png)
+
+>Vista de un admin
+
+![App View Admin](./images/citas.png)
+
+>Admin puede buscar y ver las citas de un Usuario
+
+![Admin Funcion 1](./images/search_users.png)
+![Admin Funcion 2](./images/search_user.png)
+
+>Form para agregar/editar citas
+
+![App Crud](./images/form.png)
+
+>Dashboard
+![Dasboard Admin](./images/dashboard.png)
 
 ## Deployment
 

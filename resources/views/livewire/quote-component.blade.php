@@ -5,12 +5,12 @@
 	@endif
 
 	<main class="my-2">
+		<header class="flex items-center justify-between py-4 px-1">
+			<h2 class="text-black dark:text-white">List to quotes</h2>
+			<x-primary-button wire:click='toggleFormQuotes'>New Quote</x-primary-button>
+		</header>
+		
 		@if ($quotes && count($quotes) > 0)
-			<header class="flex items-center justify-between py-4 px-1">
-				<h2 class="text-black dark:text-white">List to quotes</h2>
-				<x-primary-button wire:click='toggleFormQuotes'>New Quote</x-primary-button>
-			</header>
-
 			<div class="relative overflow-auto">
 				<x-tables.tbl_main :$quotes />
 			</div>

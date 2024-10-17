@@ -31,6 +31,8 @@ class QuoteComponent extends Component
   #[Url(history: true)]
   public $selectedUserId = null;
 
+  public $status = 'pending';
+
   public $search = '';
   public $form_quotes = false;
   public $form_delete = false;
@@ -116,14 +118,17 @@ class QuoteComponent extends Component
   {
     $this->validate();
 
+    $status = Auth::user()->permissions ? $this->status : 'pending';
+    $userId = Auth::user()->permissions ? $this->selectedUserId : Auth::id();
+
     Quote::updateOrCreate(
       ['id' => $this->quoteId],
       [
         'reason' => $this->reason,
         'date_quote' => $this->date,
         'central_id' => $this->centralId,
-        'status' => 'pending',
-        'user_id' => Auth::id()
+        'status' => $status,
+        'user_id' => $userId
       ]
     );
 
@@ -133,8 +138,7 @@ class QuoteComponent extends Component
 
   public function deleteQuote(Quote $q)
   {
-    $this->quoteId = $q->id;
-    Quote::destroy($this->quoteId);
+    $q->delete();
   }
 
   public function updateQuote(Quote $q)
